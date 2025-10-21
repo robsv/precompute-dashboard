@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:stable-alpine3.17-slim
+    image: nginx:1.15-alpine
     ports:
       - 80:80
       - 443:443
@@ -12,7 +12,7 @@ services:
       - static_volume:/api/static
       - /etc/nginx/ssl/:/etc/nginx/ssl/
     networks:
-      - chacrm2-net
+      - nb-net
   app:
     build: ./api
     restart: unless-stopped
@@ -23,10 +23,10 @@ services:
       - PYTHONUNBUFFERED=1
       - CONFIG_SERVER_URL=https://config.int.janelia.org/
     networks:
-        - chacrm2-net
+        - nb-net
 
 networks:
-  chacrm2-net:
+  nb-net:
       driver: bridge
 
 volumes:

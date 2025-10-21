@@ -86,7 +86,6 @@ def before_request():
                                    title='Could not connect to DynamoDB',
                                    message=mess)
     try:
-        dbconfig = JRC.get_config("databases")
         aws = JRC.get_config("aws")
     except Exception as err:
         temp = "{2}: An exception of type {0} occurred. Arguments:\n{1!r}"
