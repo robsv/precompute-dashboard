@@ -1,0 +1,142 @@
+.hhmiblue {
+  color: #028d96;
+}
+
+.hhmigreen1 {
+  color: #00a450;
+}
+
+.hhmigreen2 {
+  color: #51b447;
+}
+
+.hhmigreen3 {
+  color: #8ac242;
+}
+
+.hr-with-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 16pt;
+  color: #8ac242;
+}
+
+.hr-with-text::before,
+.hr-with-text::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+.hr-with-text span {
+  background-color: #222;
+  padding: 0 10px;
+}
+
+table.standard {
+  border-collapse: collapse;
+  font-size: 12pt;
+  line-height: 14px;
+}
+
+.standard th {
+  padding: 2pt;
+  background: #058d95;
+  border: 1px solid #058d95;
+}
+
+.standard td {
+  padding: 2pt;
+  text-align: left;
+  background: #334 !important;
+  color: #bbc !important;
+  border: 1px solid #058d95;
+}
+
+.code {
+  background: #bbc !important;
+  color: #334 !important;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+/* Bootstrap */
+.btn-tiny {
+    padding: 2px 2px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+/* General */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  background-color: #222;
+  color: #bbc;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+input, select {
+  background-color: #222;
+  color: #bbc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #bbc;
+}
+
+/* Input */
+input:focus { background: #222; }
+input:hover { background: #333; }
+
+/* Links */
+a:link, a:visited { color: #6883c0; }
+
+a:hover, a:active {
+  color: #ccc;
+  background: #336;
+}
+
+/* Info link */
+.infolink:before
+{
+    content: '?';
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-size: 11pt;
+    line-height: 2.4ex;
+    border-radius: 15px;
+    margin-right: 4px;
+    padding: 1px;
+    color: blue;
+    background: white;
+    border: 1px solid blue;
+    text-decoration: none;
+}
+
+.infolink:hover:before
+{
+    color: white;
+    background: blue;
+    border-color: white;
+    text-decoration: none;
+}

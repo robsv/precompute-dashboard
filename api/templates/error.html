@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4" style="color:red"><span class='fas fa-exclamation-triangle fa-lg' style='color:red'></span> Error</h1>
+  <h1 class="display-5" style="color:#333">{{ title }}</h1>
+  <p class="lead" style="color: #333">{{ message|safe }}</p>
+</div>
+<a class="btn btn-outline-primary" href="/" role="button">Return home</a>
+{% endblock %}

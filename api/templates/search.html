@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script>
+
+function go_to_run_search() {
+  if (!$('#pname').val()) {
+    alert("You must enter a publishing name or body ID");
+    return;
+  }
+  url = "/run_search/" + $("#pname").val() + "/" + $('input[id="stype"]:checked').val()
+  window.location = url;
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  {{navbar|safe}}
+  <div style="padding:15px">
+  <form>
+  <h2>Search</h2>
+  <br>
+  <input type="text" class="form-control basicAutoComplete col-sm-2" id="pname">
+  <input type="radio" id="stype" name="type" value="Body ID" checked> Body ID&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="stype" name="type" value="Neuron type"> Neuron type&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="stype" name="type" value="Neuron instance"> Neuron instance&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="stype" name="type" value="Publishing name"> Publishing name&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="stype" name="type" value="Slide code"> Slide code&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="stype" name="type" value="Sample"> Sample
+  <br>
+Enter a body ID, neuron type, neuron instance, publishing name, slide code, or sample
+(i.e. <a href="run_search/1912436017/Body ID">12191</a>,
+<a href="run_search/DNpe011/Neuron type">DNpe011</a>,
+<a href="run_search/DNp17_R/Neuron instance">DNp17_R</a>,
+<a href="run_search/LH2448/Publishing name">LH2448</a>,
+<a href="run_search/20130412_19_F2/Slide code">20130412_19_F2</a>,
+<a href="run_search/2634867676857499746/Sample">2634867676857499746</a>)
+  <br><br>
+  <button type="submit" id="s" class="btn btn-primary btn-sm" onclick="go_to_run_search(); return false;" href="#">Search</button>
+  <br>
+{% endblock %}
